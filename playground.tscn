@@ -21,8 +21,33 @@ size = Vector3(33.29, 2, 2)
 material = SubResource("StandardMaterial3D_bhunq")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1612463814]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.503, 4.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.075702, 4.5, 0)
 size = Vector3(2, 8, 2)
+material = SubResource("StandardMaterial3D_bhunq")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1027186242]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.924298, 4.5, 0)
+size = Vector3(2, 8, 2)
+material = SubResource("StandardMaterial3D_bhunq")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1173102363]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07570171, 9.5, 0)
+size = Vector3(20, 2, 2)
+material = SubResource("StandardMaterial3D_bhunq")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D" unique_id=539557603]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.0757017, 1.5, 0)
+size = Vector3(2, 2, 2)
+material = SubResource("StandardMaterial3D_bhunq")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="CSGCombiner3D" unique_id=930116052]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9242983, 1.5, 0)
+size = Vector3(2, 2, 2)
+material = SubResource("StandardMaterial3D_bhunq")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="CSGCombiner3D" unique_id=158687237]
+transform = Transform3D(0.8660254, 0.5, 0, -0.5, 0.8660254, 0, 0, 0, 1, -4.8407226, 0.615523, 0)
+size = Vector3(4, 2, 2)
 material = SubResource("StandardMaterial3D_bhunq")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1676784160]
