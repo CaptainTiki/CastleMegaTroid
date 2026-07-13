@@ -1,7 +1,7 @@
 extends PlayerState
 class_name PlayerStateJump
 
-@export var jump_velocity : float = 8.5
+@export var jump_velocity : float = 11.5
 
 func init() -> void:
 	pass

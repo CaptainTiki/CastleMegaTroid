@@ -1,6 +1,8 @@
 extends CharacterBody3D
 class_name Player
 
+@export var debug : bool = true
+
 const DEBUG_JUMP_INDICATOR = preload("uid://dnvlpo5adi8a5")
 
 #region /// Export Variables ///
@@ -18,6 +20,7 @@ var previous_state : PlayerState :
 #region /// Standard Variables ///
 var direction : Vector2 = Vector2.ZERO
 var gravity : float = -16.5
+var gravity_fall_multiplier : float = 1.0
 #endregion
 
 func _ready() -> void:
@@ -31,7 +34,7 @@ func _process(delta: float) -> void:
 	change_state( current_state.process(delta) )
 
 func _physics_process(delta: float) -> void:
-	velocity.y += gravity * delta
+	velocity.y += gravity * gravity_fall_multiplier * delta
 	change_state( current_state.physics_process(delta) )
 	move_and_slide()
 
@@ -76,6 +79,8 @@ func update_direction() -> void:
 
 
 func add_debug_indicator(color : Color = Color.RED) -> void:
+	if not debug:
+		return
 	var d : DebugJumpIndicator = DEBUG_JUMP_INDICATOR.instantiate() 
 	get_tree().root.add_child(d)
 	d.global_position = global_position
