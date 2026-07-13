@@ -1,6 +1,10 @@
 extends CharacterBody3D
 class_name Player
 
+#region /// Export Variables ///
+@export var move_speed : float = 4.5
+#endregion
+
 #region /// State Machine Variables ///
 var states : Array[ PlayerState ]
 var current_state : PlayerState :
@@ -45,6 +49,7 @@ func initialize_states() -> void:
 		
 	change_state(current_state)
 	current_state.enter()
+	$Label3D.text = current_state.name
 
 
 func change_state( new_state : PlayerState ) -> void:
@@ -59,7 +64,10 @@ func change_state( new_state : PlayerState ) -> void:
 	states.push_front(new_state)
 	current_state.enter()
 	states.resize( 3 ) #this keeps the states array - only 3 elements. 
+	$Label3D.text = current_state.name
 
 func update_direction() -> void:
 	#var prev_direction : Vector2 = direction
-	direction = Input.get_vector("left", "right", "up", "down")
+	var x_axis : float = Input.get_axis("left", "right")
+	var y_axis : float = Input.get_axis("up", "down")
+	direction = Vector2(x_axis, y_axis)

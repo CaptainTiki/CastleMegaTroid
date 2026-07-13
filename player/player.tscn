@@ -27,7 +27,13 @@ mesh = SubResource("CapsuleMesh_bhunq")
 [node name="States" type="Node" parent="." unique_id=640858217]
 
 [node name="Idle" type="Node" parent="States" unique_id=480183873]
+unique_name_in_owner = true
 script = ExtResource("2_g1dw6")
 
 [node name="Run" type="Node" parent="States" unique_id=2030484977]
+unique_name_in_owner = true
 script = ExtResource("3_yw30f")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=1332228013]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+text = "Text"
