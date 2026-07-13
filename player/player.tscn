@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://dyb5pvuccqumt" path="res://player/player.gd" id="1_oul6g"]
 [ext_resource type="Script" uid="uid://2ad6xpyaxx5g" path="res://player/states/idle.gd" id="2_g1dw6"]
 [ext_resource type="Script" uid="uid://b8i55q62wumnx" path="res://player/states/run.gd" id="3_yw30f"]
+[ext_resource type="Script" uid="uid://bt1hblc1koskn" path="res://player/states/jump.gd" id="4_qjkh3"]
+[ext_resource type="Script" uid="uid://c7luld77q3am2" path="res://player/states/fall.gd" id="5_g6k8r"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bhunq"]
 radius = 0.4
@@ -33,6 +35,14 @@ script = ExtResource("2_g1dw6")
 [node name="Run" type="Node" parent="States" unique_id=2030484977]
 unique_name_in_owner = true
 script = ExtResource("3_yw30f")
+
+[node name="Jump" type="Node" parent="States" unique_id=1839512758]
+unique_name_in_owner = true
+script = ExtResource("4_qjkh3")
+
+[node name="Fall" type="Node" parent="States" unique_id=866380119]
+unique_name_in_owner = true
+script = ExtResource("5_g6k8r")
 
 [node name="Label3D" type="Label3D" parent="." unique_id=1332228013]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)

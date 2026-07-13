@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dnvlpo5adi8a5"]
+
+[ext_resource type="Script" uid="uid://ces8vrhjba3ki" path="res://player/debug_jump_indicator.gd" id="1_n6vax"]
+
+[sub_resource type="Gradient" id="Gradient_qr7du"]
+offsets = PackedFloat32Array(0.4759036, 0.8915663)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_qjkh3"]
+gradient = SubResource("Gradient_qr7du")
+width = 13
+height = 13
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.8, 0)
+
+[sub_resource type="Gradient" id="Gradient_n6vax"]
+colors = PackedColorArray(1, 1, 1, 0.4745098, 1, 1, 1, 0.5058824)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_g6k8r"]
+gradient = SubResource("Gradient_n6vax")
+height = 5
+
+[node name="DebugJumpIndicator" type="Node3D" unique_id=318387378]
+script = ExtResource("1_n6vax")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=705411318]
+ignore_occlusion_culling = true
+texture = SubResource("GradientTexture2D_qjkh3")
+
+[node name="Sprite3D2" type="Sprite3D" parent="." unique_id=1390716719]
+ignore_occlusion_culling = true
+texture = SubResource("GradientTexture2D_g6k8r")

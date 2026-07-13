@@ -1,6 +1,8 @@
 extends CharacterBody3D
 class_name Player
 
+const DEBUG_JUMP_INDICATOR = preload("uid://dnvlpo5adi8a5")
+
 #region /// Export Variables ///
 @export var move_speed : float = 4.5
 #endregion
@@ -71,3 +73,12 @@ func update_direction() -> void:
 	var x_axis : float = Input.get_axis("left", "right")
 	var y_axis : float = Input.get_axis("up", "down")
 	direction = Vector2(x_axis, y_axis)
+
+
+func add_debug_indicator(color : Color = Color.RED) -> void:
+	var d : DebugJumpIndicator = DEBUG_JUMP_INDICATOR.instantiate() 
+	get_tree().root.add_child(d)
+	d.global_position = global_position
+	d.modulate(color)
+	await get_tree().create_timer( 3.0 ).timeout
+	d.queue_free()
