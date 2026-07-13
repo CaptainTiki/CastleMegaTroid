@@ -24,6 +24,74 @@ script = ExtResource("1_oul6g")
 
 [node name="CharacterScene" parent="." unique_id=1976219135 instance=ExtResource("2_boad6")]
 
+[node name="Skeleton3D" parent="CharacterScene/Rogue" parent_id_path=PackedInt32Array(1976219135, 511737017) index="0" unique_id=527029895]
+bones/1/position = Vector3(-2.8726737e-22, 0.39206377, 8.881784e-16)
+bones/1/rotation = Quaternion(-6.181375e-16, 0.043157768, 1.8626456e-09, 0.9990683)
+bones/1/scale = Vector3(0.9999999, 1, 0.9999999)
+bones/2/position = Vector3(0.17094508, 0.11358722, 2.4869003e-08)
+bones/2/rotation = Quaternion(0.9923529, 0.058147546, 0.07043116, 0.08303039)
+bones/2/scale = Vector3(0.99999994, 0.9999997, 1.0000013)
+bones/3/position = Vector3(3.4207986e-08, 0.22707759, 2.0907809e-09)
+bones/3/rotation = Quaternion(0.2629204, 7.3172785e-08, -1.7807808e-07, 0.9648175)
+bones/3/scale = Vector3(1.0000004, 0.9999999, 1)
+bones/4/position = Vector3(-7.916243e-09, 0.14943704, -1.6324579e-08)
+bones/4/rotation = Quaternion(-0.53015447, -0.11437364, 0.04180537, 0.839111)
+bones/4/scale = Vector3(1.0000002, 1.0000007, 0.9999993)
+bones/5/position = Vector3(1.5022067e-08, 0.16565005, -4.955892e-09)
+bones/5/rotation = Quaternion(1.5386804e-05, 0.92026025, -0.3913071, -3.3072283e-06)
+bones/5/scale = Vector3(1.0000001, 0.9999975, 1.0000027)
+bones/6/position = Vector3(-0.17094508, 0.11358734, 3.3676066e-09)
+bones/6/rotation = Quaternion(0.9973222, -0.02945736, 0.03152928, 0.05904828)
+bones/6/scale = Vector3(0.9999998, 0.9999997, 1.0000012)
+bones/7/position = Vector3(-9.590471e-09, 0.22707748, -1.4257818e-08)
+bones/7/rotation = Quaternion(0.2740081, -7.208485e-08, 1.9092425e-07, 0.96172744)
+bones/7/scale = Vector3(1, 0.9999998, 1)
+bones/8/position = Vector3(1.6356344e-08, 0.14943703, 7.0378268e-09)
+bones/8/rotation = Quaternion(-0.55903924, 0.11451283, -0.008627658, 0.82115006)
+bones/8/scale = Vector3(0.99999964, 1.0000006, 0.99999917)
+bones/9/position = Vector3(7.2770354e-09, 0.16565001, 2.4832259e-08)
+bones/9/rotation = Quaternion(-8.931782e-05, 0.9202216, -0.39139768, 2.040913e-05)
+bones/9/scale = Vector3(1.0000002, 0.9999978, 1.0000021)
+bones/10/position = Vector3(1.6653345e-16, 0.1919775, -9.367507e-16)
+bones/10/rotation = Quaternion(-2.1591907e-15, -3.725288e-09, 6.22332e-17, 1)
+bones/10/scale = Vector3(1.0000001, 1, 1.0000001)
+bones/11/position = Vector3(1.1102219e-16, 0.37498778, 3.6567967e-15)
+bones/11/rotation = Quaternion(0.0050096815, 3.7160148e-09, 0.00043362536, 0.99998736)
+bones/11/scale = Vector3(0.99999994, 0.9999999, 0.99999994)
+bones/12/position = Vector3(5.783729e-11, 0.26879656, -6.470732e-10)
+bones/12/rotation = Quaternion(-0.0035346458, -0.031341583, -0.00019459246, 0.9995025)
+bones/12/scale = Vector3(0.9999998, 1, 0.99999994)
+bones/13/position = Vector3(0.21200737, 0.1341321, 8.9202e-08)
+bones/13/rotation = Quaternion(-0.53361493, -0.116774395, -0.7717419, 0.32562765)
+bones/13/scale = Vector3(0.99999934, 0.99999917, 0.9999999)
+bones/14/position = Vector3(4.2567923e-08, 0.24189734, -3.83609e-08)
+bones/14/rotation = Quaternion(2.2519741e-07, -1.740773e-08, -0.35859546, 0.93349314)
+bones/14/scale = Vector3(1.0000004, 0.9999998, 1.0000001)
+bones/15/position = Vector3(6.7139125e-09, 0.2600438, -8.199005e-08)
+bones/15/rotation = Quaternion(-2.2764013e-07, -2.6413438e-09, 0.026658095, 0.99964464)
+bones/15/scale = Vector3(1.0000001, 0.99999994, 1)
+bones/16/position = Vector3(2.9802305e-08, 0.073825836, 7.823097e-08)
+bones/16/rotation = Quaternion(-0.22214931, -0.3458293, 0.18463314, 0.8927275)
+bones/16/scale = Vector3(0.9999999, 1.0000002, 1.0000004)
+bones/17/position = Vector3(1.4266169e-08, 0.096125074, -0.057500023)
+bones/17/rotation = Quaternion(1.01181556e-07, -5.2903026e-08, -0.7071067, 0.7071068)
+bones/17/scale = Vector3(1.0000001, 1, 1)
+bones/18/position = Vector3(-0.21200734, 0.13413228, 7.003441e-08)
+bones/18/rotation = Quaternion(-0.5606276, 0.04683241, 0.7369309, 0.37474838)
+bones/18/scale = Vector3(0.99999917, 0.9999989, 1)
+bones/19/position = Vector3(-1.2423668e-07, 0.24189733, -5.22592e-08)
+bones/19/rotation = Quaternion(2.0889334e-07, -5.988057e-08, 0.37637338, 0.92646813)
+bones/19/scale = Vector3(1.0000002, 0.9999996, 1)
+bones/20/position = Vector3(-5.006051e-08, 0.2600439, -2.8129824e-07)
+bones/20/rotation = Quaternion(-2.391134e-07, -8.223895e-09, -0.026658088, 0.99964464)
+bones/20/scale = Vector3(0.9999998, 0.9999998, 0.9999999)
+bones/21/position = Vector3(2.235176e-08, 0.07382588, -6.332993e-08)
+bones/21/rotation = Quaternion(-0.21243739, 0.38411778, -0.14025737, 0.8874976)
+bones/21/scale = Vector3(0.9999995, 0.99999994, 1.0000005)
+bones/22/position = Vector3(-3.1763026e-08, 0.096125245, -0.05750002)
+bones/22/rotation = Quaternion(9.603003e-08, 4.7518018e-08, 0.7071067, 0.7071068)
+bones/22/scale = Vector3(1, 1.0000001, 1.0000001)
+
 [node name="StandingCollisionShape" type="CollisionShape3D" parent="." unique_id=1455030624]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85, 0)
@@ -60,7 +128,31 @@ script = ExtResource("6_g6k8r")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 text = "Text"
 
-[node name="FallRaycast" type="RayCast3D" parent="." unique_id=574806221]
+[node name="OneWayDetector" type="Node3D" parent="." unique_id=899190344]
 unique_name_in_owner = true
+
+[node name="FallRaycastL" type="RayCast3D" parent="OneWayDetector" unique_id=644496216]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, -0.2, 0)
+visible = false
+enabled = false
 target_position = Vector3(0, -0.25, 0)
 collision_mask = 2
+hit_from_inside = true
+
+[node name="FallRaycastC" type="RayCast3D" parent="OneWayDetector" unique_id=574806221]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 0)
+visible = false
+enabled = false
+target_position = Vector3(0, -0.25, 0)
+collision_mask = 2
+hit_from_inside = true
+
+[node name="FallRaycastR" type="RayCast3D" parent="OneWayDetector" unique_id=959116661]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, -0.2, 0)
+visible = false
+enabled = false
+target_position = Vector3(0, -0.25, 0)
+collision_mask = 2
+hit_from_inside = true
+
+[editable path="CharacterScene"]

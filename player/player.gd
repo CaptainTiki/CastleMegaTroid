@@ -15,7 +15,8 @@ const DEBUG_JUMP_INDICATOR = preload("uid://dnvlpo5adi8a5")
 @onready var standing_collision_shape: CollisionShape3D = %StandingCollisionShape
 @onready var crouching_collision_shape: CollisionShape3D = %CrouchingCollisionShape
 @onready var mesh_instance: Node3D = $CharacterScene
-@onready var fall_raycast: RayCast3D = %FallRaycast
+@onready var one_way_detector: Node3D = %OneWayDetector
+@onready var animation_player: AnimationPlayer = $CharacterScene/AnimationPlayer
 #endregion
 
 #region /// State Machine Variables ///
@@ -30,6 +31,7 @@ var previous_state : PlayerState :
 var direction : Vector2 = Vector2.ZERO
 var gravity : float = -16.5
 var gravity_fall_multiplier : float = 1.0
+var dropping_through_one_way: bool = false
 #endregion
 
 func _ready() -> void:
@@ -81,10 +83,17 @@ func change_state( new_state : PlayerState ) -> void:
 	$Label3D.text = current_state.name
 
 func update_direction() -> void:
-	#var prev_direction : Vector2 = direction
+	var prev_direction : Vector2 = direction
 	var x_axis : float = Input.get_axis("left", "right")
 	var y_axis : float = Input.get_axis("up", "down")
 	direction = Vector2(x_axis, y_axis)
+	
+	if prev_direction.x != direction.x:
+		if direction.x < 0.0:
+			mesh_instance.rotation.y = deg_to_rad(-90.0)
+		elif direction.x > 0.0:
+			mesh_instance.rotation.y = deg_to_rad(90.0)
+	
 
 
 func add_debug_indicator(color : Color = Color.RED) -> void:
