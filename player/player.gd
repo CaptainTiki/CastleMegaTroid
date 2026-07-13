@@ -14,7 +14,7 @@ const DEBUG_JUMP_INDICATOR = preload("uid://dnvlpo5adi8a5")
 #region /// Node References ///
 @onready var standing_collision_shape: CollisionShape3D = %StandingCollisionShape
 @onready var crouching_collision_shape: CollisionShape3D = %CrouchingCollisionShape
-@onready var mesh_instance: MeshInstance3D = $MeshInstance
+@onready var mesh_instance: Node3D = $CharacterScene
 @onready var fall_raycast: RayCast3D = %FallRaycast
 #endregion
 

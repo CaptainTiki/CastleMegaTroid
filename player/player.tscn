@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://5crhnglncl2x"]
 
 [ext_resource type="Script" uid="uid://dyb5pvuccqumt" path="res://player/player.gd" id="1_oul6g"]
+[ext_resource type="PackedScene" uid="uid://d10fy0lg64p4d" path="res://assets/meshes/characters/player/rogue_character.tscn" id="2_boad6"]
 [ext_resource type="Script" uid="uid://2ad6xpyaxx5g" path="res://player/states/idle.gd" id="2_g1dw6"]
 [ext_resource type="Script" uid="uid://b8i55q62wumnx" path="res://player/states/run.gd" id="3_yw30f"]
 [ext_resource type="Script" uid="uid://bt1hblc1koskn" path="res://player/states/jump.gd" id="4_qjkh3"]
@@ -15,15 +16,13 @@ height = 1.7
 radius = 0.4
 height = 1.0
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_bhunq"]
-radius = 0.4
-height = 1.7
-
 [node name="Player" type="CharacterBody3D" unique_id=1273615478]
 collision_layer = 256
 collision_mask = 3
 axis_lock_linear_z = true
 script = ExtResource("1_oul6g")
+
+[node name="CharacterScene" parent="." unique_id=1976219135 instance=ExtResource("2_boad6")]
 
 [node name="StandingCollisionShape" type="CollisionShape3D" parent="." unique_id=1455030624]
 unique_name_in_owner = true
@@ -34,10 +33,6 @@ shape = SubResource("CapsuleShape3D_g6k8r")
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("CapsuleShape3D_bhunq")
-
-[node name="MeshInstance" type="MeshInstance3D" parent="." unique_id=1053618604]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85, 0)
-mesh = SubResource("CapsuleMesh_bhunq")
 
 [node name="States" type="Node" parent="." unique_id=640858217]
 
