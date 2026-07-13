@@ -5,6 +5,23 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bhunq"]
 albedo_color = Color(0, 0, 0, 1)
 
+[sub_resource type="Gradient" id="Gradient_rupst"]
+colors = PackedColorArray(0.27337447, 0.490281, 1, 1, 0.003921569, 0, 0.88235295, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_n2xfn"]
+gradient = SubResource("Gradient_rupst")
+fill_to = Vector2(0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0qn2o"]
+albedo_texture = SubResource("GradientTexture2D_n2xfn")
+
+[sub_resource type="BoxMesh" id="BoxMesh_uflcg"]
+material = SubResource("StandardMaterial3D_0qn2o")
+size = Vector3(2.5, 0.25, 2)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_wt17y"]
+data = PackedVector3Array(-1.25, 0.125, 1, 1.25, 0.125, 1, -1.25, -0.125, 1, 1.25, 0.125, 1, 1.25, -0.125, 1, -1.25, -0.125, 1, 1.25, 0.125, -1, -1.25, 0.125, -1, 1.25, -0.125, -1, -1.25, 0.125, -1, -1.25, -0.125, -1, 1.25, -0.125, -1, 1.25, 0.125, 1, 1.25, 0.125, -1, 1.25, -0.125, 1, 1.25, 0.125, -1, 1.25, -0.125, -1, 1.25, -0.125, 1, -1.25, 0.125, -1, -1.25, 0.125, 1, -1.25, -0.125, -1, -1.25, 0.125, 1, -1.25, -0.125, 1, -1.25, -0.125, -1, 1.25, 0.125, 1, -1.25, 0.125, 1, 1.25, 0.125, -1, -1.25, 0.125, 1, -1.25, 0.125, -1, 1.25, 0.125, -1, -1.25, -0.125, 1, 1.25, -0.125, 1, -1.25, -0.125, -1, 1.25, -0.125, 1, 1.25, -0.125, -1, -1.25, -0.125, -1)
+
 [node name="Playground" type="Node3D" unique_id=2024679414]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1362656562]
@@ -56,3 +73,14 @@ fov = 51.7
 
 [node name="Player" parent="." unique_id=531335520 instance=ExtResource("1_rupst")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.24875546, 0)
+
+[node name="OneWayPlatform" type="MeshInstance3D" parent="." unique_id=2108884155]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.85, 3, 0)
+mesh = SubResource("BoxMesh_uflcg")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="OneWayPlatform" unique_id=385305603]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OneWayPlatform/StaticBody3D" unique_id=202035867]
+shape = SubResource("ConcavePolygonShape3D_wt17y")

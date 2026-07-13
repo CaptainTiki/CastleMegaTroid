@@ -19,6 +19,8 @@ func handle_input( _event : InputEvent ) -> PlayerState:
 func process(_delta: float) -> PlayerState:
 	if player.direction.x != 0:
 		return run
+	elif player.direction.y > player.crouch_deadzone:
+		return crouch
 	return next_state
 
 func physics_process(_delta: float) -> PlayerState:

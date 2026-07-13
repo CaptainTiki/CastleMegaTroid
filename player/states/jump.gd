@@ -9,6 +9,7 @@ func init() -> void:
 func enter() -> void:
 	player.add_debug_indicator(Color.LIME_GREEN)
 	player.velocity.y = jump_velocity
+	player.set_collision_mask_value(2, false)
 
 func exit() -> void:
 	player.add_debug_indicator(Color.YELLOW)

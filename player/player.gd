@@ -7,6 +7,15 @@ const DEBUG_JUMP_INDICATOR = preload("uid://dnvlpo5adi8a5")
 
 #region /// Export Variables ///
 @export var move_speed : float = 4.5
+@export var crouch_deadzone : float = 0.5
+@export var deceleration_rate : float = 8.0
+#endregion
+
+#region /// Node References ///
+@onready var standing_collision_shape: CollisionShape3D = %StandingCollisionShape
+@onready var crouching_collision_shape: CollisionShape3D = %CrouchingCollisionShape
+@onready var mesh_instance: MeshInstance3D = $MeshInstance
+@onready var fall_raycast: RayCast3D = %FallRaycast
 #endregion
 
 #region /// State Machine Variables ///
