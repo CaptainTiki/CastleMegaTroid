@@ -1,7 +1,7 @@
 extends CharacterBody3D
 class_name Player
 
-@export var debug : bool = true
+@export var debug : bool = false
 
 const DEBUG_JUMP_INDICATOR = preload("uid://dnvlpo5adi8a5")
 
@@ -15,7 +15,8 @@ const DEBUG_JUMP_INDICATOR = preload("uid://dnvlpo5adi8a5")
 @onready var standing_collision_shape: CollisionShape3D = %StandingCollisionShape
 @onready var crouching_collision_shape: CollisionShape3D = %CrouchingCollisionShape
 @onready var mesh_instance: Node3D = $CharacterScene
-@onready var one_way_detector: Node3D = %OneWayDetector
+@onready var one_way_detector: ShapeCast3D = %OneWayDetector
+@onready var one_way_platform_check: ShapeCast3D = $OneWayPlatformCheck
 @onready var animation_player: AnimationPlayer = $CharacterScene/AnimationPlayer
 #endregion
 

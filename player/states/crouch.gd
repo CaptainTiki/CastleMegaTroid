@@ -15,12 +15,12 @@ func exit() -> void:
 
 func handle_input(event: InputEvent) -> PlayerState:
 	if event.is_action_pressed("jump"):
-		if check_oneway_platform():
-			player.dropping_through_one_way = true
+		player.one_way_platform_check.force_shapecast_update()
+		if player.one_way_platform_check.is_colliding():
+			print("fall through")
 			player.set_collision_mask_value(2, false)
-			player.velocity.y = -1.5
+			player.position.y -= 0.5
 			return fall
-		return jump
 	return next_state
 
 func process(_delta: float) -> PlayerState:
@@ -36,10 +36,3 @@ func physics_process(delta: float) -> PlayerState:
 		return fall
 	
 	return next_state
-
-func check_oneway_platform() -> bool:
-	for r in player.one_way_detector.get_children():
-		if r is RayCast3D:
-			if r.is_colliding():
-				return true
-	return false

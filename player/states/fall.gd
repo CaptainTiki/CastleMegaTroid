@@ -4,13 +4,12 @@ class_name PlayerStateFall
 @export var coyote_time: float = 0.125
 @export var gravity_fall_multiplier: float = 1.75
 @export var jump_buffer_time: float = 0.125
-@export var one_way_ignore_time: float = 0.5
 
 var coyote_timer: float = 0.0
 var jump_buffer_timer: float = 0.0
-var one_way_timer: float = 0.0
 var previous_gravity_multiplier: float = 1.0
 
+var one_way_collision_interruption : bool = false
 
 func enter() -> void:
 	player.animation_player.play("Jump_Idle")
@@ -20,19 +19,22 @@ func enter() -> void:
 	
 	coyote_timer = 0.0
 	jump_buffer_timer = 0.0
-	one_way_timer = 0.0
 	
-	if player.dropping_through_one_way:
-		one_way_timer = one_way_ignore_time
-	elif player.previous_state != jump:
+	if player.previous_state != jump:
 		coyote_timer = coyote_time
-
+	
+	player.one_way_detector.force_shapecast_update()
+	if not player.one_way_detector.is_colliding():
+		player.set_collision_mask_value(2, true)
+	else:
+		one_way_collision_interruption = true
 
 func exit() -> void:
 	player.animation_player.play("Jump_Land")
 	player.gravity_fall_multiplier = previous_gravity_multiplier
 	player.add_debug_indicator(Color.RED)
-
+	player.one_way_detector.enabled = false
+	jump_buffer_timer = 0
 
 func handle_input(event: InputEvent) -> PlayerState:
 	if event.is_action_pressed("jump"):
@@ -51,27 +53,14 @@ func physics_process(delta: float) -> PlayerState:
 	coyote_timer -= delta
 	jump_buffer_timer -= delta
 	player.velocity.x = player.direction.x * player.move_speed
-	if player.dropping_through_one_way:
-		one_way_timer -= delta
-		
-		# Do not trust is_on_floor() during the drop-through.
-		if one_way_timer <= 0.0 and not check_oneway_platform():
+	
+	if one_way_collision_interruption:
+		if not player.one_way_detector.is_colliding():
+			one_way_collision_interruption = false
 			player.set_collision_mask_value(2, true)
-			player.dropping_through_one_way = false
-		return next_state
-	# Normal falling logic.
-	if check_oneway_platform():
-		player.set_collision_mask_value(2, true)
-		
+	
 	if player.is_on_floor():
 		if jump_buffer_timer > 0.0:
 			return jump
 		return idle
 	return next_state
-
-
-func check_oneway_platform() -> bool:
-	for child in player.one_way_detector.get_children():
-		if child is RayCast3D and child.is_colliding():
-			return true
-	return false

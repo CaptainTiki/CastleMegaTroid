@@ -10,11 +10,14 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g6k8r"]
 radius = 0.4
-height = 1.7
+height = 1.75
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bhunq"]
 radius = 0.4
 height = 1.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0qn2o"]
+size = Vector3(0.75, 0.25, 1)
 
 [node name="Player" type="CharacterBody3D" unique_id=1273615478]
 collision_layer = 256
@@ -125,34 +128,22 @@ unique_name_in_owner = true
 script = ExtResource("6_g6k8r")
 
 [node name="Label3D" type="Label3D" parent="." unique_id=1332228013]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4, 0)
 text = "Text"
 
-[node name="OneWayDetector" type="Node3D" parent="." unique_id=899190344]
+[node name="OneWayDetector" type="ShapeCast3D" parent="." unique_id=1039683150]
 unique_name_in_owner = true
-
-[node name="FallRaycastL" type="RayCast3D" parent="OneWayDetector" unique_id=644496216]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, -0.2, 0)
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85, 0)
 enabled = false
-target_position = Vector3(0, -0.25, 0)
+shape = SubResource("CapsuleShape3D_g6k8r")
+target_position = Vector3(0, 0, 0)
 collision_mask = 2
-hit_from_inside = true
+debug_shape_custom_color = Color(0.78352344, 0.7835234, 0.7835234, 1)
 
-[node name="FallRaycastC" type="RayCast3D" parent="OneWayDetector" unique_id=574806221]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 0)
-visible = false
+[node name="OneWayPlatformCheck" type="ShapeCast3D" parent="." unique_id=868269548]
 enabled = false
-target_position = Vector3(0, -0.25, 0)
+shape = SubResource("BoxShape3D_0qn2o")
+target_position = Vector3(0, 0, 0)
 collision_mask = 2
-hit_from_inside = true
-
-[node name="FallRaycastR" type="RayCast3D" parent="OneWayDetector" unique_id=959116661]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, -0.2, 0)
-visible = false
-enabled = false
-target_position = Vector3(0, -0.25, 0)
-collision_mask = 2
-hit_from_inside = true
 
 [editable path="CharacterScene"]
